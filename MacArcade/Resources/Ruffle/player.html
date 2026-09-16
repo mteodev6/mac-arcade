@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MacArcade Flash Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0d0f18;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            -webkit-user-select: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+        }
+        #player-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        ruffle-player {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #overlay {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            z-index: 10;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            color: #00f2fe;
+            text-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+        }
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(0, 242, 254, 0.2);
+            border-top: 4px solid #00f2fe;
+            border-right: 4px solid #ff007f;
+            border-radius: 50%;
+            animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+        .status-text {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .error-box {
+            background: rgba(255, 34, 86, 0.15);
+            border: 1px solid #ff2256;
+            color: #ff6b8b;
+            padding: 16px 24px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 80%;
+            font-size: 13px;
+            line-height: 1.5;
+            pointer-events: auto;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        #pause-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(13, 15, 24, 0.75);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            color: #ff007f;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+        }
+    </style>
+    <script src="ruffle.js"></script>
+</head>
+<body>
+    <div id="overlay">
+        <div class="spinner"></div>
+        <div class="status-text" id="status-text">INITIALIZING FLASH EMULATOR...</div>
+    </div>
+    <div id="pause-overlay">GAME PAUSED</div>
+    <div id="player-container"></div>
+
+    <script>
+        // Ruffle Configuration
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.RufflePlayer.config = {
+            letterbox: "on",
+            autoplay: "on",
+            unmuteOverlay: "hidden",
+            quality: "high",
+            scale: "showAll",
+            wmode: "direct",
+            splashScreen: false,
+            contextMenu: "rightClickOnly",
+            upgradeToHttps: false,
+            fontSources: []
+        };
+
+        let player = null;
+        let swfSourceUrl = "";
+        let isPaused = false;
+
+        function hideOverlay() {
+            const overlay = document.getElementById("overlay");
+            if (overlay) {
+                overlay.style.opacity = "0";
+                setTimeout(() => { overlay.style.display = "none"; }, 400);
+            }
+        }
+
+        function showError(msg) {
+            const overlay = document.getElementById("overlay");
+            if (overlay) {
+                overlay.style.display = "flex";
+                overlay.style.opacity = "1";
+                overlay.innerHTML = `<div class="error-box"><strong>FLASH EMULATION ERROR</strong><br>${msg}</div>`;
+            }
+        }
+
+        function loadSWF(swfUrl) {
+            swfSourceUrl = swfUrl;
+            const container = document.getElementById("player-container");
+            const statusText = document.getElementById("status-text");
+            if (statusText) statusText.innerText = "LOADING FLASH GAME...";
+
+            try {
+                if (!window.RufflePlayer) {
+                    throw new Error("Ruffle runtime was not loaded.");
+                }
+
+                const ruffle = window.RufflePlayer.newest ? window.RufflePlayer.newest() : window.RufflePlayer;
+                player = ruffle.createPlayer();
+                player.id = "arcade-ruffle-instance";
+                container.innerHTML = "";
+                container.appendChild(player);
+
+                player.addEventListener("loadedmetadata", () => {
+                    hideOverlay();
+                    notifyNative({ event: "loaded", metadata: player.metadata });
+                });
+
+                player.load({
+                    url: swfUrl,
+                    autoplay: "on",
+                    letterbox: "on",
+                    unmuteOverlay: "hidden",
+                    quality: "high"
+                }).then(() => {
+                    setTimeout(hideOverlay, 300);
+                    notifyNative({ event: "started" });
+                }).catch(err => {
+                    console.error("Ruffle load failure:", err);
+                    showError("Could not load SWF: " + (err.message || err));
+                    notifyNative({ event: "error", message: String(err) });
+                });
+            } catch (e) {
+                console.error("Player initialization exception:", e);
+                showError("Initialization error: " + (e.message || e));
+                notifyNative({ event: "error", message: String(e) });
+            }
+        }
+
+        // Native bridge communication
+        function notifyNative(msg) {
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.arcadeBridge) {
+                window.webkit.messageHandlers.arcadeBridge.postMessage(msg);
+            }
+        }
+
+        // Controls exposed to native macOS Swift app
+        window.arcadePause = function() {
+            if (player && typeof player.pause === "function") {
+                player.pause();
+                isPaused = true;
+                document.getElementById("pause-overlay").style.display = "flex";
+                notifyNative({ event: "paused" });
+            }
+        };
+
+        window.arcadeResume = function() {
+            if (player && typeof player.play === "function") {
+                player.play();
+                isPaused = false;
+                document.getElementById("pause-overlay").style.display = "none";
+                notifyNative({ event: "resumed" });
+            }
+        };
+
+        window.arcadeTogglePause = function() {
+            if (isPaused) {
+                window.arcadeResume();
+            } else {
+                window.arcadePause();
+            }
+        };
+
+        window.arcadeRestart = function() {
+            if (swfSourceUrl) {
+                document.getElementById("pause-overlay").style.display = "none";
+                isPaused = false;
+                const overlay = document.getElementById("overlay");
+                if (overlay) {
+                    overlay.style.display = "flex";
+                    overlay.style.opacity = "1";
+                    overlay.innerHTML = `<div class="spinner"></div><div class="status-text">RESTARTING GAME...</div>`;
+                }
+                loadSWF(swfSourceUrl);
+            } else {
+                location.reload();
+            }
+        };
+
+        window.arcadeSetVolume = function(volume) {
+            if (player) {
+                player.volume = Math.max(0, Math.min(1, volume));
+            }
+        };
+
+        window.arcadeMute = function(isMuted) {
+            if (player) {
+                player.volume = isMuted ? 0 : 1;
+            }
+        };
+
+        // Auto-load if 'swf' query parameter exists
+        const urlParams = new URLSearchParams(window.location.search);
+        const swfParam = urlParams.get("swf");
+        if (swfParam) {
+            window.addEventListener("DOMContentLoaded", () => {
+                loadSWF(swfParam);
+            });
+        }
+    </script>
+</body>
+</html>

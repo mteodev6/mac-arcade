@@ -1,0 +1,11 @@
+{
+  "id": "e301d24a-7bc9-4e55-9154-1b12b591b901",
+  "title": "Space Defender",
+  "type": "html5",
+  "entryPath": "index.html",
+  "category": "arcade",
+  "tags": ["arcade", "retro", "vector", "space", "shooter"],
+  "notes": "Classic 1984 vector arcade shooter. Use Arrow keys or WASD to steer and thrust. Press Space to fire lasers. Destroy asteroids and alien UFOs! Powerups include Triple Laser and Plasma Shield.",
+  "accentColorHex": "#00f2fe",
+  "customAspectRatio": "standard4x3"
+}

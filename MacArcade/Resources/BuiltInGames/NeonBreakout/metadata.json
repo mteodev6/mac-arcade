@@ -1,0 +1,11 @@
+{
+  "id": "c71a39f5-8d14-41b2-bf39-38b9d93a6102",
+  "title": "Neon Breakout",
+  "type": "html5",
+  "entryPath": "index.html",
+  "category": "arcade",
+  "tags": ["breakout", "neon", "synthwave", "retro", "bricks"],
+  "notes": "Fast-paced synthwave neon brick breaker! Move the paddle with the mouse or A/D keys. Hit the ball to smash glowing neon bricks. Catch falling powerups including Multi-Ball (3x balls), Extended Paddle, and Slow Motion.",
+  "accentColorHex": "#ff007f",
+  "customAspectRatio": "standard4x3"
+}

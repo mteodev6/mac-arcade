@@ -1,0 +1,11 @@
+{
+  "id": "a184e921-9923-44f2-90ab-129415849001",
+  "title": "Bloons Tower Defense",
+  "type": "swf",
+  "entryPath": "bloonstd.swf",
+  "category": "flash",
+  "tags": ["flash", "tower-defense", "strategy", "classic"],
+  "notes": "The legendary classic Flash tower defense game by Ninja Kiwi! Place dart monkeys, tack shooters, bomb towers, and super monkeys along the path to pop waves of invading bloons. Upgrade towers and survive all 50 rounds!",
+  "accentColorHex": "#ff6600",
+  "customAspectRatio": "standard4x3"
+}
