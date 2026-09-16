@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+/* Begin PBXBuildFile section */
+		4B2D17DED361370CD6BAD9E9 /* MacArcadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4040173CF1061961A460D69E /* MacArcadeApp.swift */; };
+		744617EF1BBFB719BBAE0C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825A04828531B4DF0C69468 /* AppDelegate.swift */; };
+		8D4F46CB17302F0DB32B77C3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B864B5E71804E3FB09B67 /* Game.swift */; };
+		2D088E894B9843201F43CD16 /* GameLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57FCB07F8542CB5D69C6455 /* GameLibrary.swift */; };
+		009837D3C0A10CC89F3C90B5 /* ArcadeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F781B10A81222ABEE3198A3 /* ArcadeSettings.swift */; };
+		192B5D8769E5C95F4FF87B6A /* ArcadeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CC15AE33C5F359529BD5CF /* ArcadeServer.swift */; };
+		771FA97076C7B6DBAC866B67 /* ArcadeSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD25F2848B13D69EFDBB1A /* ArcadeSchemeHandler.swift */; };
+		447FB195073A3AAAB97EA455 /* FileImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C778B83D8CE9FFDFF428F0AE /* FileImportService.swift */; };
+		6EB92ACAAC8A6CE69D19DACB /* ThumbnailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB6BF2BDC8A3A25EB790E7D /* ThumbnailService.swift */; };
+		50375A5E99908F9315B53385 /* ZipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9C5C339226900A0BB30E4 /* ZipExtractor.swift */; };
+		9D809CB05E07BA3C471FCBAA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0DF6C3886EADEC20AC38C1 /* MainView.swift */; };
+		B64A05CCCF6E6A23824050F6 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179B0192FD377E389E026AB /* SidebarView.swift */; };
+		C70C84AC077E9E78E952F7C1 /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FD52129BB05FB9C88BC505 /* GameGridView.swift */; };
+		E4BE800905EC1D10D3B5F779 /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D27EAE9C364A20399A59E /* GameListView.swift */; };
+		0AB711E872C98574E411CC9D /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A1EF387C5839B9D1BB266 /* GameCardView.swift */; };
+		0DF47F462C51F6CBE049B16D /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA140795953AF9999F0C741 /* GameDetailView.swift */; };
+		2974AC7A7FC29831383D7B7A /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C1A2CD345BB7ED7F17D0B /* PlayerView.swift */; };
+		52E6E06D68F155C1C8AD912C /* ArcadeCabinetBezel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDDA11FC351288603DDDF /* ArcadeCabinetBezel.swift */; };
+		AB73EE094F040BBCD9F3896C /* PlayerControlsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EBABEDE240CE2CAA51F4BB /* PlayerControlsBar.swift */; };
+		6A6C13C1DFE170A14944C69F /* AddGameSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8534D292088FBA5466B16 /* AddGameSheet.swift */; };
+		06390F64B5A1396B81EB1034 /* EditGameSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F4EC85B28A04B89779865 /* EditGameSheet.swift */; };
+		651CF7D135F7ADC7824BD5C9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631046DE21848F8788C588F8 /* SettingsView.swift */; };
+		FA729E90A8C9C4D83111D048 /* MarqueeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785C687FDD5967C940B356A0 /* MarqueeBanner.swift */; };
+		CA81F817CBE88D495F083FAE /* CRTShaderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037059E6CD1B1E53BF6E277C /* CRTShaderOverlay.swift */; };
+		EE15D587ADDCD498049AB8BC /* DropZoneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E6491F6CD52C16BE7D830 /* DropZoneOverlay.swift */; };
+		C69F659750EBFAB0AE1B2378 /* ArcadeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50EBAE054997897815324A1 /* ArcadeButton.swift */; };
+		B8BAEA432FF836CB8D4C8093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C49E6A2ABD93231C0631847 /* Assets.xcassets */; };
+		99CBD15729959C7194B1F421 /* Ruffle in Resources */ = {isa = PBXBuildFile; fileRef = 2454C6698D1D3360008476A7 /* Ruffle */; };
+		AF119AF89E3F905141F4BD51 /* BuiltInGames in Resources */ = {isa = PBXBuildFile; fileRef = 3FF91B8B27415142273474F8 /* BuiltInGames */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30C659E6D2EC80261290A8DF /* MacArcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacArcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4040173CF1061961A460D69E /* MacArcadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MacArcadeApp.swift"; sourceTree = "<group>"; };
+		1825A04828531B4DF0C69468 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate.swift"; sourceTree = "<group>"; };
+		D32B864B5E71804E3FB09B67 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game.swift"; sourceTree = "<group>"; };
+		A57FCB07F8542CB5D69C6455 /* GameLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameLibrary.swift"; sourceTree = "<group>"; };
+		4F781B10A81222ABEE3198A3 /* ArcadeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArcadeSettings.swift"; sourceTree = "<group>"; };
+		81CC15AE33C5F359529BD5CF /* ArcadeServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArcadeServer.swift"; sourceTree = "<group>"; };
+		AADD25F2848B13D69EFDBB1A /* ArcadeSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArcadeSchemeHandler.swift"; sourceTree = "<group>"; };
+		C778B83D8CE9FFDFF428F0AE /* FileImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileImportService.swift"; sourceTree = "<group>"; };
+		FCB6BF2BDC8A3A25EB790E7D /* ThumbnailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThumbnailService.swift"; sourceTree = "<group>"; };
+		A4E9C5C339226900A0BB30E4 /* ZipExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZipExtractor.swift"; sourceTree = "<group>"; };
+		3E0DF6C3886EADEC20AC38C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView.swift"; sourceTree = "<group>"; };
+		7179B0192FD377E389E026AB /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SidebarView.swift"; sourceTree = "<group>"; };
+		C5FD52129BB05FB9C88BC505 /* GameGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameGridView.swift"; sourceTree = "<group>"; };
+		5A8D27EAE9C364A20399A59E /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameListView.swift"; sourceTree = "<group>"; };
+		D90A1EF387C5839B9D1BB266 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameCardView.swift"; sourceTree = "<group>"; };
+		2BA140795953AF9999F0C741 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDetailView.swift"; sourceTree = "<group>"; };
+		C96C1A2CD345BB7ED7F17D0B /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerView.swift"; sourceTree = "<group>"; };
+		8A5EDDA11FC351288603DDDF /* ArcadeCabinetBezel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArcadeCabinetBezel.swift"; sourceTree = "<group>"; };
+		D1EBABEDE240CE2CAA51F4BB /* PlayerControlsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerControlsBar.swift"; sourceTree = "<group>"; };
+		50E8534D292088FBA5466B16 /* AddGameSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddGameSheet.swift"; sourceTree = "<group>"; };
+		EA6F4EC85B28A04B89779865 /* EditGameSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditGameSheet.swift"; sourceTree = "<group>"; };
+		631046DE21848F8788C588F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
+		785C687FDD5967C940B356A0 /* MarqueeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarqueeBanner.swift"; sourceTree = "<group>"; };
+		037059E6CD1B1E53BF6E277C /* CRTShaderOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CRTShaderOverlay.swift"; sourceTree = "<group>"; };
+		EB8E6491F6CD52C16BE7D830 /* DropZoneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DropZoneOverlay.swift"; sourceTree = "<group>"; };
+		D50EBAE054997897815324A1 /* ArcadeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArcadeButton.swift"; sourceTree = "<group>"; };
+		4C49E6A2ABD93231C0631847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		2454C6698D1D3360008476A7 /* Ruffle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Ruffle"; sourceTree = "<group>"; };
+		3FF91B8B27415142273474F8 /* BuiltInGames */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "BuiltInGames"; sourceTree = "<group>"; };
+		E20F7E75AF7E2D99AB48DB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+		9AD0E9D53EA6B377664AE934 /* MacArcade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MacArcade.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D194BE53567489F6AF111708 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCA3014F0DF28041826CAE33 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4040173CF1061961A460D69E /* MacArcadeApp.swift */,
+				1825A04828531B4DF0C69468 /* AppDelegate.swift */,
+			);
+			path = "App";
+			sourceTree = "<group>";
+		};
+		14DA5117C9FA43B5A33BC95A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D32B864B5E71804E3FB09B67 /* Game.swift */,
+				A57FCB07F8542CB5D69C6455 /* GameLibrary.swift */,
+				4F781B10A81222ABEE3198A3 /* ArcadeSettings.swift */,
+			);
+			path = "Models";
+			sourceTree = "<group>";
+		};
+		66317567E309BD77B94F85FF /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				81CC15AE33C5F359529BD5CF /* ArcadeServer.swift */,
+				AADD25F2848B13D69EFDBB1A /* ArcadeSchemeHandler.swift */,
+			);
+			path = "Server";
+			sourceTree = "<group>";
+		};
+		3CA3F4A0C1D5129426EB4FCB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C778B83D8CE9FFDFF428F0AE /* FileImportService.swift */,
+				FCB6BF2BDC8A3A25EB790E7D /* ThumbnailService.swift */,
+				A4E9C5C339226900A0BB30E4 /* ZipExtractor.swift */,
+			);
+			path = "Services";
+			sourceTree = "<group>";
+		};
+		2A3B09DBB213E1E548F63A3D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				785C687FDD5967C940B356A0 /* MarqueeBanner.swift */,
+				037059E6CD1B1E53BF6E277C /* CRTShaderOverlay.swift */,
+				EB8E6491F6CD52C16BE7D830 /* DropZoneOverlay.swift */,
+				D50EBAE054997897815324A1 /* ArcadeButton.swift */,
+			);
+			path = "Components";
+			sourceTree = "<group>";
+		};
+		D4D70C04C5C45B4D7F098D3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A3B09DBB213E1E548F63A3D /* Components */,
+				3E0DF6C3886EADEC20AC38C1 /* MainView.swift */,
+				7179B0192FD377E389E026AB /* SidebarView.swift */,
+				C5FD52129BB05FB9C88BC505 /* GameGridView.swift */,
+				5A8D27EAE9C364A20399A59E /* GameListView.swift */,
+				D90A1EF387C5839B9D1BB266 /* GameCardView.swift */,
+				2BA140795953AF9999F0C741 /* GameDetailView.swift */,
+				C96C1A2CD345BB7ED7F17D0B /* PlayerView.swift */,
+				8A5EDDA11FC351288603DDDF /* ArcadeCabinetBezel.swift */,
+				D1EBABEDE240CE2CAA51F4BB /* PlayerControlsBar.swift */,
+				50E8534D292088FBA5466B16 /* AddGameSheet.swift */,
+				EA6F4EC85B28A04B89779865 /* EditGameSheet.swift */,
+				631046DE21848F8788C588F8 /* SettingsView.swift */,
+			);
+			path = "Views";
+			sourceTree = "<group>";
+		};
+		42FC58810D42613300564031 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C49E6A2ABD93231C0631847 /* Assets.xcassets */,
+				2454C6698D1D3360008476A7 /* Ruffle */,
+				3FF91B8B27415142273474F8 /* BuiltInGames */,
+				E20F7E75AF7E2D99AB48DB47 /* Info.plist */,
+				9AD0E9D53EA6B377664AE934 /* MacArcade.entitlements */,
+			);
+			path = "Resources";
+			sourceTree = "<group>";
+		};
+		20A4E285C21BB03D5340A7D1 /* MacArcade */ = {
+			isa = PBXGroup;
+			children = (
+				BCA3014F0DF28041826CAE33 /* App */,
+				14DA5117C9FA43B5A33BC95A /* Models */,
+				66317567E309BD77B94F85FF /* Server */,
+				3CA3F4A0C1D5129426EB4FCB /* Services */,
+				D4D70C04C5C45B4D7F098D3A /* Views */,
+				42FC58810D42613300564031 /* Resources */,
+			);
+			path = "MacArcade";
+			sourceTree = "<group>";
+		};
+		DEDCCFD856E3C3314B72D14C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30C659E6D2EC80261290A8DF /* MacArcade.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F28176587EAC81C8275D5A8 = {
+			isa = PBXGroup;
+			children = (
+				20A4E285C21BB03D5340A7D1 /* MacArcade */,
+				DEDCCFD856E3C3314B72D14C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58CF8C6492E350620A51D257 /* MacArcade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B593ACA17FE996D5C3D94977 /* Build configuration list for PBXNativeTarget "MacArcade" */;
+			buildPhases = (
+				2086A0431E8FDE7AB4E0B7B6 /* Sources */,
+				D194BE53567489F6AF111708 /* Frameworks */,
+				DA5D5D9CB522C5E2B89F3235 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacArcade;
+			productName = MacArcade;
+			productReference = 30C659E6D2EC80261290A8DF /* MacArcade.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		731E4311B7AAB011612BC951 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					58CF8C6492E350620A51D257 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 1509851EA3F2B2EB63B10256 /* Build configuration list for PBXProject "MacArcade" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6F28176587EAC81C8275D5A8;
+			productRefGroup = DEDCCFD856E3C3314B72D14C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58CF8C6492E350620A51D257 /* MacArcade */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA5D5D9CB522C5E2B89F3235 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8BAEA432FF836CB8D4C8093 /* Assets.xcassets in Resources */,
+				99CBD15729959C7194B1F421 /* Ruffle in Resources */,
+				AF119AF89E3F905141F4BD51 /* BuiltInGames in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2086A0431E8FDE7AB4E0B7B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B2D17DED361370CD6BAD9E9 /* MacArcadeApp.swift in Sources */,
+				744617EF1BBFB719BBAE0C39 /* AppDelegate.swift in Sources */,
+				8D4F46CB17302F0DB32B77C3 /* Game.swift in Sources */,
+				2D088E894B9843201F43CD16 /* GameLibrary.swift in Sources */,
+				009837D3C0A10CC89F3C90B5 /* ArcadeSettings.swift in Sources */,
+				192B5D8769E5C95F4FF87B6A /* ArcadeServer.swift in Sources */,
+				771FA97076C7B6DBAC866B67 /* ArcadeSchemeHandler.swift in Sources */,
+				447FB195073A3AAAB97EA455 /* FileImportService.swift in Sources */,
+				6EB92ACAAC8A6CE69D19DACB /* ThumbnailService.swift in Sources */,
+				50375A5E99908F9315B53385 /* ZipExtractor.swift in Sources */,
+				9D809CB05E07BA3C471FCBAA /* MainView.swift in Sources */,
+				B64A05CCCF6E6A23824050F6 /* SidebarView.swift in Sources */,
+				C70C84AC077E9E78E952F7C1 /* GameGridView.swift in Sources */,
+				E4BE800905EC1D10D3B5F779 /* GameListView.swift in Sources */,
+				0AB711E872C98574E411CC9D /* GameCardView.swift in Sources */,
+				0DF47F462C51F6CBE049B16D /* GameDetailView.swift in Sources */,
+				2974AC7A7FC29831383D7B7A /* PlayerView.swift in Sources */,
+				52E6E06D68F155C1C8AD912C /* ArcadeCabinetBezel.swift in Sources */,
+				AB73EE094F040BBCD9F3896C /* PlayerControlsBar.swift in Sources */,
+				6A6C13C1DFE170A14944C69F /* AddGameSheet.swift in Sources */,
+				06390F64B5A1396B81EB1034 /* EditGameSheet.swift in Sources */,
+				651CF7D135F7ADC7824BD5C9 /* SettingsView.swift in Sources */,
+				FA729E90A8C9C4D83111D048 /* MarqueeBanner.swift in Sources */,
+				CA81F817CBE88D495F083FAE /* CRTShaderOverlay.swift in Sources */,
+				EE15D587ADDCD498049AB8BC /* DropZoneOverlay.swift in Sources */,
+				C69F659750EBFAB0AE1B2378 /* ArcadeButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0E5E274C82C631F0F0A67BC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		83C1D4C182EB419F221CD66C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = "wholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		554A56F654C94894FECE6A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacArcade/Resources/MacArcade.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MacArcade/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arcade.MacArcade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A42F3A98CFDE0554B8A36AD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacArcade/Resources/MacArcade.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MacArcade/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arcade.MacArcade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1509851EA3F2B2EB63B10256 /* Build configuration list for PBXProject "MacArcade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E5E274C82C631F0F0A67BC5 /* Debug */,
+				83C1D4C182EB419F221CD66C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B593ACA17FE996D5C3D94977 /* Build configuration list for PBXNativeTarget "MacArcade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				554A56F654C94894FECE6A8E /* Debug */,
+				A42F3A98CFDE0554B8A36AD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 731E4311B7AAB011612BC951 /* Project object */;
+}

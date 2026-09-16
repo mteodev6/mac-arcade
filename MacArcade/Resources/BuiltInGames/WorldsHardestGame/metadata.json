@@ -1,0 +1,11 @@
+{
+  "id": "b295f032-aa34-45e3-81bc-23052695a002",
+  "title": "World's Hardest Game",
+  "type": "swf",
+  "entryPath": "whg.swf",
+  "category": "puzzle",
+  "tags": ["flash", "puzzle", "hardcore", "retro", "classic"],
+  "notes": "Guide the red square through dangerous obstacle courses, collect yellow coins, and reach the green beacon without colliding with the spinning blue orbs. 30 levels of precision dexterity challenge!",
+  "accentColorHex": "#e60000",
+  "customAspectRatio": "standard4x3"
+}
