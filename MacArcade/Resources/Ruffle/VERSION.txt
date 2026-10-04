@@ -1,0 +1,4 @@
+Ruffle web player 0.6.0
+Source: https://www.npmjs.com/package/@ruffle-rs/ruffle
+Package tarball: https://registry.npmjs.org/@ruffle-rs/ruffle/-/ruffle-0.6.0.tgz
+License: dual MIT OR Apache-2.0. See LICENSE_MIT and LICENSE_APACHE.
